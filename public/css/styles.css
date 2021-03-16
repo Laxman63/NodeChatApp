@@ -57,6 +57,11 @@ button:disabled {
 }
 
 /* Join Page Styles */
+.laxmanname {
+    align-items: center;
+    color: #0070CC;
+    margin-bottom: 20px;
+}
 
 .centered-form {
     background: #333744;
