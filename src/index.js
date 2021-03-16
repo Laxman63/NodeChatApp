@@ -29,8 +29,8 @@ socket.on('join',({username,room},callback)=>{
         return callback(error);
     }
     socket.join(user.room)
-    socket.emit('wel', generateMessage('Admin!','Welcome'))
-    socket.broadcast.to(user.room).emit('wel', generateMessage('Admin!',`${user.username} has joined!`));
+    socket.emit('wel', generateMessage('Admin-:Laxman Kumar!','Welcome'))
+    socket.broadcast.to(user.room).emit('wel', generateMessage('Admin-: Laxman Kumar!',`${user.username} has joined!`));
     io.to(user.room).emit('roomData', {
         room: user.room,
         users: getUsersInRoom(user.room)
@@ -63,7 +63,7 @@ callback()
         const user = removeUser(socket.id)
 
         if (user) {
-            io.to(user.room).emit('wel', generateMessage('Admin',`${user.username} has left!`))
+            io.to(user.room).emit('wel', generateMessage('Admin-: Laxman Kumar',`${user.username} has left!`))
             io.to(user.room).emit('roomData', {
                 room: user.room,
                 users: getUsersInRoom(user.room)
