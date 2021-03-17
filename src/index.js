@@ -29,7 +29,7 @@ socket.on('join',({username,room},callback)=>{
         return callback(error);
     }
     socket.join(user.room)
-    socket.emit('wel', generateMessage('Admin-:Laxman Kumar!','Welcome'))
+    socket.emit('wel', generateMessage('Admin-:Laxman Kumar!', `Welcome in Chat Room ${user.room}`))
     socket.broadcast.to(user.room).emit('wel', generateMessage('Admin-: Laxman Kumar!',`${user.username} has joined!`));
     io.to(user.room).emit('roomData', {
         room: user.room,
